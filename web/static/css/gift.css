@@ -1,0 +1,49 @@
+.gift-text {
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: #484D50;
+}
+
+.gift-text-second {
+    font-family: Playfair Display, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 35px;
+    color: #6F99E8;
+}
+
+.gift-button {
+    width: 326px;
+    height: 71px;
+    border: 1px none;
+    background: linear-gradient(180deg, #A7BFE8 0%, #84A8E8 60.94%, #6190E8 100%);
+    box-shadow: 0px 20px 18px rgba(97, 144, 232, 0.2), 0px 5px 0px #5985D6, inset 0px 3px 6px #ABC3ED, inset 0px -5px 10px #769DE8;
+    border-radius: 200px;
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.stages-title {
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #484D50;
+}
+
+.stages-text{
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #444444;
+}
