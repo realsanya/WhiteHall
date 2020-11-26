@@ -4,8 +4,44 @@ body {
     color: #484D50;
 }
 
+
 header, footer {
     background-color: #ffffff;
+}
+
+h5 {
+    font-family: Playfair Display, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 85px;
+    letter-spacing: -0.005em;
+    color: #FFFFFF
+}
+
+.main-subtitle {
+    font-family: Playfair Display, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 85px;
+    letter-spacing: -0.005em;
+    color: #FFFFFF;
+}
+
+.main-second-subtitle {
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: #FFFFFF;
+    padding-top: 50px;
+}
+
+.main-buttons{
+    padding-top: 70px;
+    padding-bottom: 50px;
+    text-align: left;
 }
 
 .header-title {
@@ -29,7 +65,7 @@ header, footer {
     font-weight: 700;
 }
 
-.phone:hover{
+.phone:hover {
     color: #6F99E8 !important;
 }
 
@@ -60,13 +96,7 @@ header, footer {
     cursor: pointer;
 }
 
-
-.block1 {
-    overflow-x: hidden;
-    /*background: url("../assets/img/background1.png") 750px no-repeat;*/
-}
-
-.title{
+.title {
     font-family: Playfair Display, serif;
     font-style: normal;
     font-weight: bold;
@@ -76,21 +106,51 @@ header, footer {
     padding-top: 40px;
 }
 
-
-.footer-policy{
+.footer-policy {
     font-weight: normal;
     font-size: 14px;
     text-decoration-line: underline;
     color: #DBDBDB;
 }
 
-.footer-policy:hover{
+.footer-policy:hover {
     cursor: pointer;
-    color:  #6F99E8;
+    color: #6F99E8;
 }
 
-.footer-text{
+.footer-text {
     font-weight: 400;
     font-size: 14px;
     color: #393A47;
 }
+
+.reservation-button {
+    width: 326px;
+    height: 71px;
+    border: 1px none;
+    background: linear-gradient(180deg, #FAFAFA 0%, #F0EFF2 78.12%, #ECEBEF 100%);
+    box-shadow: 0px 22px 12px rgba(247, 246, 248, 0.2), 0px 5px 0px #DFDFDF, inset 0px 3px 6px #FAFAFA, inset 0px -5px 10px #F1F1F1;
+    border-radius: 200px;
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #484D50;
+    text-align: center;
+}
+
+.gift-button {
+    width: 326px;
+    height: 71px;
+    border: 1px none;
+    background: linear-gradient(180deg, #A7BFE8 0%, #84A8E8 60.94%, #6190E8 100%);
+    box-shadow: 0px 20px 18px rgba(97, 144, 232, 0.2), 0px 5px 0px #5985D6, inset 0px 3px 6px #ABC3ED, inset 0px -5px 10px #769DE8;
+    border-radius: 200px;
+    font-family: Open Sans, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
