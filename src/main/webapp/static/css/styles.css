@@ -48,11 +48,6 @@
     color: #444444;
 }
 
-.review-card-img {
-    width: 100px;
-    height: 100px;
-    padding-top: 20px;
-}
 
 .login-button {
     width: 200px;
@@ -203,5 +198,29 @@ table {
     box-shadow: 0px 11px 36px 7px #F1F1F1;
     border-radius: 10px;
 }
+
+.reviews-card {
+    box-shadow: 0px 11px 36px 7px #F1F1F1;
+    border-radius: 10px;
+    background-color: #fefefe;
+}
+
+.reviews-card-body {
+    width: 600px;
+    text-align: center;
+}
+
+.reviews-card-title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: italic;
+    color: #484D50;
+}
+
+.reviews-card-text {
+    font-size: 18px;
+}
+
 
 

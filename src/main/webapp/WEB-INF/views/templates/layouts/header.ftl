@@ -37,7 +37,7 @@
                     <#if user??>
                         <a class="nav-item" href="/main">Главная</a>
                         <a class="nav-item" href="/advantages">Наши преимущества</a>
-                        <a class="nav-item">Услуги</a>
+                        <a class="nav-item" href="/services">Услуги</a>
                         <a class="nav-item" href="/gift">Получить подарок</a>
                         <a class="nav-item" href="/stages">Этапы работы</a>
                         <a class="nav-item">Отзывы</a>
@@ -46,12 +46,12 @@
                     <#else>
                         <a class="nav-item" href="/main">Главная</a>
                         <a class="nav-item" href="/advantages">Наши преимущества</a>
-                        <a class="nav-item">Услуги</a>
+                        <a class="nav-item" href="/services">Услуги</a>
                         <a class="nav-item" href="/gift">Получить подарок</a>
                         <a class="nav-item" href="/stages">Этапы работы</a>
                         <a class="nav-item">Отзывы</a>
                         <a class="nav-item">Наша команда</a>
-                        <a class="nav-item">Войти</a>
+                        <a class="nav-item" href="/login">Войти</a>
                     </#if>
                 </div>
             </div>
