@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Получить подарок</title>
+    <title>Регистрация</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/main.css">
-    <link rel="stylesheet" href="../../static/css/gift.css">
+    <link rel="stylesheet" href="..trap.min.css">
+    <link rel="stylesheet" href="..css">
+    <link rel="stylesheet" href="..css">
 </head>
 <body>
 <header class="header">
@@ -59,26 +59,40 @@
     </nav>
 </header>
 
-<section class="block2">
+<section class="login">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
-                <div class="row" style="padding-top: 60px">
-                    <div class="title">Проходи опрос и забирай подарок</div>
-                </div>
-                <div class="row" style="padding-top: 70px">
-                    <div class="gift-text">Пройди опрос и мы подарим тебе <br/> <span class="gift-text-second">+5 обработанных фотографий</span></div>
-                </div>
-                <div class="row" style="padding-top: 50px">
-                    <button class="gift-button">
-                        Получить подарок <img src="../assets/img/click.png" style="padding-left: 5px"/>
-                    </button>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <img src="../assets/img/Phone.png" style="width: 560px">
-            </div>
+            <div class="offset-3 col-md-6 title">Регистрация</div>
         </div>
+
+        <div class="container" style="padding-top: 40px; padding-bottom: 100px">
+            <form>
+                <div class="offset-3 col-md-6">
+                    <div class="row justify-content-center">
+                        <input class="login-input" type="text" placeholder="Имя"/>
+                    </div>
+                    <div class="row justify-content-center" style="padding-top: 20px">
+                        <input class="login-input" type="text" placeholder="Фамилия"/>
+                    </div>
+                    <div class="row justify-content-center" style="padding-top: 20px">
+                        <input class="login-input" type="email" placeholder="Почта"/>
+                    </div>
+                    <div class="row justify-content-center" style="padding-top: 20px">
+                        <input class="login-input" type="password" placeholder="Пароль"/>
+                    </div>
+                    <div class="row justify-content-center" style="padding-top: 20px">
+                        <input class="login-input" type="password" placeholder="Повторите пароль"/>
+                    </div>
+
+                    <div class="row justify-content-center" style="padding-top: 40px">
+                        <button class="register-button">
+                            Зарегистрироваться <img src="../assets/img/click.png" style="padding-left: 15px"/>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
     </div>
 </section>
