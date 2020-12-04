@@ -1,6 +1,6 @@
 <#ftl encoding="UTF-8"/>
 <#import "layouts/base.ftl" as base>
-<@base.main title="Главная">
+<@base.main title="Главная" css=["styles.css"]>
     <div class="content">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -24,7 +24,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -43,7 +44,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -63,7 +65,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -84,7 +87,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -104,7 +108,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -125,7 +130,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -145,7 +151,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">
@@ -165,7 +172,8 @@
                         <div class="row main-buttons">
                             <div>
                                 <button class="gift-button">
-                                    Заказать фотосессию <img src="/static/assets/img/click.png" style="padding-left: 15px"/>
+                                    Заказать фотосессию <img src="/static/assets/img/click.png"
+                                                             style="padding-left: 15px"/>
                                 </button>
                             </div>
                             <div style="padding-left: 40px">

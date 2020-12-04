@@ -41,6 +41,4 @@ public class ReviewDto {
                 .map(ReviewDto::from)
                 .collect(Collectors.toList());
     }
-
-
 }

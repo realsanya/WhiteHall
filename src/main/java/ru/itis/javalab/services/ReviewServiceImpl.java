@@ -1,7 +1,9 @@
 package ru.itis.javalab.services;
 
 import ru.itis.javalab.dto.ReviewDto;
+import ru.itis.javalab.models.Review;
 import ru.itis.javalab.repositories.interfaces.ReviewReposiroty;
+import ru.itis.javalab.services.interfaces.ReviewService;
 
 import java.util.List;
 
@@ -29,7 +31,13 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewDto addReview(ReviewDto review) {
-        return ReviewDto.from(reviewReposiroty.findById(review.getId()));
+    public void addReview(ReviewDto review) {
+        reviewReposiroty.save(
+                Review.builder()
+                        .user_id(review.getUser())
+                        .date(review.getDate())
+                        .text(review.getText())
+                        .build()
+        );
     }
 }

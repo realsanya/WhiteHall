@@ -1,4 +1,4 @@
-package ru.itis.javalab.services;
+package ru.itis.javalab.services.interfaces;
 
 import ru.itis.javalab.dto.ReviewDto;
 
@@ -12,5 +12,5 @@ public interface ReviewService {
 
     ReviewDto getReview(Integer id);
 
-    ReviewDto addReview(ReviewDto review);
+    void addReview(ReviewDto review);
 }
