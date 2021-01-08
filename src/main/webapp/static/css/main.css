@@ -26,6 +26,14 @@ h5 {
     color: #FFFFFF
 }
 
+.nav-item {
+    color: #484D50;
+}
+
+.nav-item:active{
+    color: #484D50;
+}
+
 .main-subtitle {
     font-family: Playfair Display, serif;
     font-style: italic;

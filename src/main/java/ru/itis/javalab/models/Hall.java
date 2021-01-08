@@ -8,7 +8,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class Hall {
-    Integer id;
-    String name;
-    Integer cost;
+    private Integer id;
+    private String name;
+    private Integer cost;
 }

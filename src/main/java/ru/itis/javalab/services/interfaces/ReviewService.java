@@ -1,6 +1,7 @@
 package ru.itis.javalab.services.interfaces;
 
 import ru.itis.javalab.dto.ReviewDto;
+import ru.itis.javalab.models.Review;
 
 import java.util.List;
 

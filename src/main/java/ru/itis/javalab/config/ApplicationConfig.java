@@ -3,12 +3,16 @@ package ru.itis.javalab.config;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
+import ru.itis.javalab.repositories.*;
+import ru.itis.javalab.repositories.interfaces.*;
+import ru.itis.javalab.services.*;
+import ru.itis.javalab.services.interfaces.*;
 
 import javax.sql.DataSource;
 import java.util.Objects;
@@ -25,16 +29,66 @@ public class ApplicationConfig {
     }
 
     @Bean
+    public ImageService imageService() {
+        return new ImageServiceImpl(imageRepository());
+    }
+
+    @Bean
+    public ImageRepository imageRepository() {
+        return new ImageRepositoryJdbc(dataSource());
+    }
+
+    @Bean
+    public UserService userService() {
+        return new UserServiceImpl(userRepository());
+    }
+
+    @Bean
+    public UserRepository userRepository() {
+        return new UserRepositoryJdbc(dataSource(), imageService());
+    }
+
+    @Bean
+    public RoleService roleService() {
+        return new RoleServiceImpl(roleRepository());
+    }
+
+    @Bean
+    public RoleRepository roleRepository() {
+        return new RoleRepositoryJdbc(dataSource());
+    }
+
+    @Bean
+    public ReviewService reviewService() {
+        return new ReviewServiceImpl(reviewReposiroty());
+    }
+
+    @Bean
+    public ReviewReposiroty reviewReposiroty() {
+        return new ReviewRepositoryJdbc(dataSource(), userService());
+    }
+
+    @Bean
+    public HallService hallService() {
+        return new HallServiceImpl(hallRepository());
+    }
+
+    @Bean
+    public HallRepository hallRepository() {
+        return new HallRepositoryJdbc(dataSource());
+    }
+
+    @Bean
     public DataSource dataSource() {
         return new HikariDataSource(hikariConfig());
     }
 
     //
-//    @Bean // создали bean с id = objectMapper
-//    public ObjectMapper objectMapper() {
-//        return new ObjectMapper();
-//    }
-//
+    //    @Bean // создали bean с id = objectMapper
+    //    public ObjectMapper objectMapper() {
+    //        return new ObjectMapper();
+    //    }
+    //
     @Bean
     public HikariConfig hikariConfig() {
         HikariConfig hikariConfig = new HikariConfig();
@@ -45,6 +99,7 @@ public class ApplicationConfig {
 //        hikariConfig.setDriverClassName(environment.getProperty("db.driver.classname"));
         return hikariConfig;
     }
+
 //
 
     @Bean
@@ -62,4 +117,5 @@ public class ApplicationConfig {
         configurer.setTemplateLoaderPath("/WEB-INF/views/templates/");
         return configurer;
     }
+
 }

@@ -1,5 +1,6 @@
 package ru.itis.javalab.services;
 
+import org.springframework.stereotype.Service;
 import ru.itis.javalab.dto.ImageDto;
 import ru.itis.javalab.models.Image;
 import ru.itis.javalab.repositories.interfaces.ImageRepository;
@@ -7,6 +8,7 @@ import ru.itis.javalab.services.interfaces.ImageService;
 
 import java.util.List;
 
+@Service
 public class ImageServiceImpl implements ImageService {
 
     private ImageRepository imageRepository;

@@ -1,5 +1,6 @@
 package ru.itis.javalab.services;
 
+import org.springframework.stereotype.Service;
 import ru.itis.javalab.dto.HallDto;
 import ru.itis.javalab.models.Hall;
 import ru.itis.javalab.repositories.interfaces.HallRepository;
@@ -7,6 +8,7 @@ import ru.itis.javalab.services.interfaces.HallService;
 
 import java.util.List;
 
+@Service
 public class HallServiceImpl implements HallService {
 
     private HallRepository hallRepository;

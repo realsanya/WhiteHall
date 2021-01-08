@@ -8,7 +8,7 @@
             </div>
 
             <div class="container" style="padding-top: 40px; padding-bottom: 100px">
-                <form>
+                <form method="post">
                     <div class="offset-3 col-md-6">
                         <div class="row justify-content-center">
                             <input class="login-input" type="text" placeholder="Имя"/>

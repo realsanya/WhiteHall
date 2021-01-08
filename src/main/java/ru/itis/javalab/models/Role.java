@@ -8,6 +8,6 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class Role {
-    Integer role_id;
-    String name;
+    private Integer role_id;
+    private String name;
 }

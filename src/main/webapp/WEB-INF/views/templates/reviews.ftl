@@ -42,60 +42,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="reviews-card">
-                                <!-- Card image -->
-                                <div class="row justify-content-center">
-                                    <img class="rounded-circle w-25 h-25" src="/static/assets/img/review1.png"
-                                         alt="Card image cap">
-                                </div>
+                        <#list reviews as review>
+                            <div class="carousel-item">
+                                <div class="reviews-card">
+                                    <!-- Card image -->
+                                    <div class="row justify-content-center">
+                                        <img class="rounded-circle w-25 h-25" src="/static/assets/img/review1.png"
+                                             alt="Card image cap">
+                                    </div>
 
-                                <!-- Card content -->
-                                <div class="card-body reviews-card-body">
-                                    <!-- Title -->
-                                    <h4 class="reviews-card-title">Маргарита Розенкевич</h4>
-                                    <!-- Text -->
-                                    <p class="reviews-card-text">22 июля 2015г.</p>
-                                    <p class="reviews-card-text">Понравилась атмосфера работы. Мы практически не
-                                        позировали,
-                                        за 2
-                                        часа
-                                        сделали всего несколько постановочных кадров, просто общались, а Надя всё
-                                        снимала и
-                                        снимала...
-                                        в результате мы получились настоящие, такие, как в жизни, словом всё вышло
-                                        достойным
-                                        остаться на долгую память)) Спасибо))) </p>
+                                    <!-- Card content -->
+                                    <div class="card-body reviews-card-body">
+                                        <!-- Title -->
+                                        <h4 class="reviews-card-title">Маргарита Розенкович</h4>
+                                        <!-- Text -->
+                                        <p class="reviews-card-text">${review.getDate()}</p>
+                                        <p class="reviews-card-text">${review.getText()}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="reviews-card">
-                                <!-- Card image -->
-                                <div class="row justify-content-center">
-                                    <img class="rounded-circle w-25 h-25" src="/static/assets/img/review1.png"
-                                         alt="Card image cap">
-                                </div>
-
-                                <!-- Card content -->
-                                <div class="card-body reviews-card-body">
-                                    <!-- Title -->
-                                    <h4 class="reviews-card-title">Маргарита Розенкевич</h4>
-                                    <!-- Text -->
-                                    <p class="reviews-card-text">22 июля 2015г.</p>
-                                    <p class="reviews-card-text">Понравилась атмосфера работы. Мы практически не
-                                        позировали,
-                                        за 2
-                                        часа
-                                        сделали всего несколько постановочных кадров, просто общались, а Надя всё
-                                        снимала и
-                                        снимала...
-                                        в результате мы получились настоящие, такие, как в жизни, словом всё вышло
-                                        достойным
-                                        остаться на долгую память)) Спасибо))) </p>
-                                </div>
-                            </div>
-                        </div>
+                        </#list>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"
                     >

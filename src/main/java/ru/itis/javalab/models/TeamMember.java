@@ -8,9 +8,9 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class TeamMember {
-    Integer id;
-    String first_name;
-    String last_name;
-    Role role_id;
-    String text;
+    private Integer id;
+    private String first_name;
+    private String last_name;
+    private Role role_id;
+    private String text;
 }

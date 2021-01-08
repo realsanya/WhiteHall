@@ -2,6 +2,7 @@ package ru.itis.javalab.repositories;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import ru.itis.javalab.dto.UserDto;
 import ru.itis.javalab.models.Review;
 import ru.itis.javalab.repositories.interfaces.ReviewReposiroty;
 import ru.itis.javalab.services.interfaces.UserService;
@@ -32,9 +33,9 @@ public class ReviewRepositoryJdbc implements ReviewReposiroty {
     //TODO
     private RowMapper<Review> reviewRowMapper = (row, i) -> Review.builder()
             .id(row.getInt("id"))
-//            .user_id(userService.getUserById(row.getInt("user_id")))
+            .user_id(userService.getUserById(row.getInt("user_id")))
             .date(row.getDate("date"))
-            .text(row.getString("review_text"))
+            .text(row.getString("text"))
             .build();
 
     public ReviewRepositoryJdbc(DataSource dataSource, UserService userService) {

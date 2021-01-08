@@ -1,5 +1,6 @@
 package ru.itis.javalab.services;
 
+import org.springframework.stereotype.Service;
 import ru.itis.javalab.dto.ReviewDto;
 import ru.itis.javalab.models.Review;
 import ru.itis.javalab.repositories.interfaces.ReviewReposiroty;
@@ -7,6 +8,7 @@ import ru.itis.javalab.services.interfaces.ReviewService;
 
 import java.util.List;
 
+@Service
 public class ReviewServiceImpl implements ReviewService {
 
     private ReviewReposiroty reviewReposiroty;
