@@ -54,7 +54,7 @@
                                     <!-- Card content -->
                                     <div class="card-body reviews-card-body">
                                         <!-- Title -->
-                                        <h4 class="reviews-card-title">Маргарита Розенкович</h4>
+                                        <h4 class="reviews-card-title">${review.getUser_id().getFirst_name()} ${review.getUser_id().getLast_name()}</h4>
                                         <!-- Text -->
                                         <p class="reviews-card-text">${review.getDate()}</p>
                                         <p class="reviews-card-text">${review.getText()}</p>

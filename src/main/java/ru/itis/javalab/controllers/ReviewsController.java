@@ -10,7 +10,7 @@ import ru.itis.javalab.services.interfaces.ReviewService;
 @Controller
 public class ReviewsController {
     @Autowired
-    private ReviewService reviewService;
+    ReviewService reviewService;
 
     @RequestMapping(value = "/reviews", method = RequestMethod.GET)
     public String getReviewsPage(Model model) {

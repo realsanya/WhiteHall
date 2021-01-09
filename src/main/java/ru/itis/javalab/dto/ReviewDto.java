@@ -9,7 +9,6 @@ import ru.itis.javalab.models.User;
 
 import java.sql.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
@@ -18,19 +17,17 @@ import java.util.stream.Collectors;
 @Builder
 public class ReviewDto {
     private Integer id;
-    private User user;
+    private User user_id;
     private Date date;
     private String text;
 
-    //TODO
     public static ReviewDto from(Review review) {
         if (review == null) {
             return null;
         }
         return ReviewDto.builder()
                 .id(review.getId())
-//                .firstName(.getFirst_Name())
-//                .lastName(user.getLastName())
+                .user_id(review.getUser_id())
                 .date(review.getDate())
                 .text(review.getText())
                 .build();

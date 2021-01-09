@@ -36,7 +36,7 @@ public class ReviewServiceImpl implements ReviewService {
     public void addReview(ReviewDto review) {
         reviewReposiroty.save(
                 Review.builder()
-                        .user_id(review.getUser())
+                        .user_id(review.getUser_id())
                         .date(review.getDate())
                         .text(review.getText())
                         .build()
