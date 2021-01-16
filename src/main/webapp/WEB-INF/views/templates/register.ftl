@@ -8,22 +8,22 @@
             </div>
 
             <div class="container" style="padding-top: 40px; padding-bottom: 100px">
-                <form method="post">
+                <form action="/register" method="post" autocomplete="off">
                     <div class="offset-3 col-md-6">
                         <div class="row justify-content-center">
-                            <input class="login-input" type="text" placeholder="Имя"/>
+                            <input class="login-input" type="text" name="first_name" placeholder="Фамилия"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 20px">
-                            <input class="login-input" type="text" placeholder="Фамилия"/>
+                            <input class="login-input" type="text" name="last_name" placeholder="Имя"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 20px">
-                            <input class="login-input" type="email" placeholder="Почта"/>
+                            <input class="login-input" type="email" name="email" placeholder="Почта"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 20px">
-                            <input class="login-input" type="password" placeholder="Пароль"/>
+                            <input class="login-input" type="password" name="password" placeholder="Пароль"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 20px">
-                            <input class="login-input" type="password" placeholder="Повторите пароль"/>
+                            <input class="login-input" type="password" name="password_again" placeholder="Повторите пароль"/>
                         </div>
 
                         <div class="row justify-content-center" style="padding-top: 40px">

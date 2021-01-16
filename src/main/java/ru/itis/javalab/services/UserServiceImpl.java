@@ -37,13 +37,14 @@ public class UserServiceImpl implements UserService {
                         .last_name(user.getLast_name())
                         .email(user.getEmail())
                         .password(user.getPassword())
+                        .image(user.getImage())
                         .build()
         );
     }
 
     @Override
-    public UserDto getUser(String email) {
-        return UserDto.from(userRepository.findByEmail(email));
+    public User getUser(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override

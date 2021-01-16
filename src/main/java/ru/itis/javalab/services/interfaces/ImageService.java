@@ -10,7 +10,7 @@ public interface ImageService {
 
     List<ImageDto> getAllImages();
 
-    ImageDto getImage(Integer id);
+    Image getImage(Integer id);
 
     void addImage(ImageDto image);
 

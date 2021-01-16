@@ -20,7 +20,7 @@ public class UserRepositoryJdbc implements UserRepository {
     private final String SQL_SELECT_ALL_BY_EMAIL = "SELECT * FROM user WHERE email=?";
 
     //language=SQL
-    private final String SQL_CREATE = "INSERT INTO user (first_name, last_name, email, password) VALUES (?, ?, ?, ?)";
+    private final String SQL_CREATE = "INSERT INTO user (first_name, last_name, email, password, image_id) VALUES (?, ?, ?, ?, ?)";
 
     //language=SQL
     final String SQL_DELETE = "DELETE FROM user WHERE id= ?";
@@ -47,11 +47,12 @@ public class UserRepositoryJdbc implements UserRepository {
 
     @Override
     public void save(User user) {
-        template.query(SQL_CREATE, userRowMapper,
-                user.getFirst_name(),
+        System.out.println(user.getFirst_name() + user.getLast_name() + user.getEmail() + user.getPassword());
+        template.update(SQL_CREATE, user.getFirst_name(),
                 user.getLast_name(),
                 user.getEmail(),
-                user.getPassword());
+                user.getPassword(),
+                user.getImage().getId());
     }
 
     @Override
@@ -63,7 +64,7 @@ public class UserRepositoryJdbc implements UserRepository {
     @Override
     public User findById(Integer id) {
         List<User> users = template.query(SQL_SELECT_BY_ID, userRowMapper, id);
-        return users.get(0);
+        return !users.isEmpty() ? users.get(0) : null;
     }
 
     @Override
@@ -74,7 +75,7 @@ public class UserRepositoryJdbc implements UserRepository {
 
     @Override
     public User findByEmail(String email) {
-        List<User> users = template.query(SQL_SELECT_BY_ID, userRowMapper, email);
-        return users.get(0);
+        List<User> users = template.query(SQL_SELECT_ALL_BY_EMAIL, userRowMapper, email);
+        return !users.isEmpty() ? users.get(0) : null;
     }
 }

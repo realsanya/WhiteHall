@@ -28,8 +28,8 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public ImageDto getImage(Integer id) {
-        return ImageDto.from(imageRepository.findById(id));
+    public Image getImage(Integer id) {
+        return imageRepository.findById(id);
     }
 
     @Override

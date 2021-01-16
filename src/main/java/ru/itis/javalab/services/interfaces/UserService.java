@@ -12,7 +12,7 @@ public interface UserService {
 
     void addUser(User user);
 
-    UserDto getUser(String email);
+    User getUser(String email);
 
     User getUserById(Integer id);
 }

@@ -8,13 +8,13 @@
             </div>
 
             <div class="container" style="padding-top: 40px; padding-bottom: 100px">
-                <form>
+                <form action="/login" method="post">
                     <div class="offset-3 col-md-6">
                         <div class="row justify-content-center">
-                            <input class="login-input" type="email" placeholder="Почта"/>
+                            <input class="login-input" type="email" name="email" placeholder="Почта"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 20px">
-                            <input class="login-input" type="password" placeholder="Пароль"/>
+                            <input class="login-input" type="password" name="password" placeholder="Пароль"/>
                         </div>
                         <div class="row justify-content-center" style="padding-top: 40px">
                             <div>Еще не зарегистрированы?</div>

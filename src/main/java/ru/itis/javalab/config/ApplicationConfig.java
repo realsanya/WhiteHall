@@ -7,6 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import ru.itis.javalab.repositories.*;
@@ -26,6 +28,11 @@ public class ApplicationConfig {
 
     public ApplicationConfig(Environment environment) {
         this.environment = environment;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
@@ -83,12 +90,7 @@ public class ApplicationConfig {
         return new HikariDataSource(hikariConfig());
     }
 
-    //
-    //    @Bean // создали bean с id = objectMapper
-    //    public ObjectMapper objectMapper() {
-    //        return new ObjectMapper();
-    //    }
-    //
+
     @Bean
     public HikariConfig hikariConfig() {
         HikariConfig hikariConfig = new HikariConfig();
