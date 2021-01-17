@@ -28,7 +28,7 @@ public class LoginController {
     public String getLoginPage() {
         return "login";
     }
-
+ //TODO logout
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginUser(HttpServletRequest request,
                             HttpServletResponse response,
@@ -45,13 +45,13 @@ public class LoginController {
                 request.getSession().setAttribute("user", userService.getUser(user.getEmail()));
 
                 Cookie emailCookie = new Cookie("email", emailFromRequest);
-                    emailCookie.setMaxAge(60 * 60 * 24 * 365);
-                    Cookie hashCookie = new Cookie("password", passwordEncoder.encode(passwordFromRequest));
-                    hashCookie.setMaxAge(60 * 60 * 24 * 365);
-                    response.addCookie(emailCookie);
-                    response.addCookie(hashCookie);
+                emailCookie.setMaxAge(60 * 60 * 24 * 365);
+                Cookie hashCookie = new Cookie("password", passwordEncoder.encode(passwordFromRequest));
+                hashCookie.setMaxAge(60 * 60 * 24 * 365);
+                response.addCookie(emailCookie);
+                response.addCookie(hashCookie);
 
-                return "redirect:/main";
+                return "redirect:/profile";
             } else {
                 return "redirect:/register";
             }

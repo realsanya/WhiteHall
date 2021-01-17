@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
                         .last_name(user.getLast_name())
                         .email(user.getEmail())
                         .password(user.getPassword())
-                        .image(user.getImage())
+                        .image_id(user.getImage_id())
                         .build()
         );
     }

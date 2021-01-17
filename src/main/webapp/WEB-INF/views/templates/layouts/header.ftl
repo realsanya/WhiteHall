@@ -1,4 +1,31 @@
 <header class="header">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document" style="border-radius: 20px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" style="color: #484D50;" id="exampleModalLabel">Спасибо за интерес к нашим услугам! <br/> Оставьте свой номер телефона
+                        для связи!</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="border: 1px none;">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="comment-input" id="comment-input"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="push_btn" class="btn btn-primary btn-lg px-3">
+                            Сохранить
+                        </button>
+                    </div>
+            </div>
+        </div>
+</div>
+
     <nav>
         <div class="container">
             <div class="row">
@@ -27,7 +54,7 @@
                         <a href="tel:+79046712346" class="ml-auto phone"> +7 (904) 671-23-46</a>
                     </div>
                     <div class="row" style="padding-top: 15px">
-                        <button class="ml-auto order-call-button"><img src="/static/assets/img/phoneIcon.png"/><span
+                        <button id="write_comment" data-toggle="modal" data-target="#exampleModal" class="ml-auto order-call-button"><img src="/static/assets/img/phoneIcon.png"/><span
                                     style="padding-left: 10px">Заказать звонок</span></button>
                     </div>
                 </div>

@@ -59,7 +59,7 @@ public class RegisterController {
                         .last_name(lastNameFromRequest)
                         .email(emailFromRequest)
                         .password(hashPassword)
-                        .image(imageService.getImage(1))
+                        .image_id(imageService.getImage(1))
                         .build();
                 userService.addUser(user);
 

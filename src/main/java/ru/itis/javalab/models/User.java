@@ -13,5 +13,5 @@ public class User {
     private String last_name;
     private String email;
     private String password;
-    private Image image;
+    private Image image_id;
 }

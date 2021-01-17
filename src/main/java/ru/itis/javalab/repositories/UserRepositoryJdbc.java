@@ -37,6 +37,7 @@ public class UserRepositoryJdbc implements UserRepository {
             .last_name(row.getString("last_name"))
             .email(row.getString("email"))
             .password(row.getString("password"))
+            .image_id(imageService.getImage(row.getInt("image_id")))
             .build();
 
     public UserRepositoryJdbc(DataSource dataSource, ImageService imageService) {
@@ -52,7 +53,7 @@ public class UserRepositoryJdbc implements UserRepository {
                 user.getLast_name(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getImage().getId());
+                user.getImage_id().getId());
     }
 
     @Override

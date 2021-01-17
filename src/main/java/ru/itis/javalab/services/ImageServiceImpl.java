@@ -18,8 +18,8 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public ImageDto getImageByPath(String path) {
-        return ImageDto.from(imageRepository.findByPath(path));
+    public Image getImageByPath(String path) {
+        return imageRepository.findByPath(path);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public void addImage(ImageDto image) {
-        //TODO
+    public void addImage(Image image) {
+        imageRepository.update(image);
     }
 
     @Override

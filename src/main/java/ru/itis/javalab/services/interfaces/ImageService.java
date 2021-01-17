@@ -6,13 +6,13 @@ import ru.itis.javalab.models.Image;
 import java.util.List;
 
 public interface ImageService {
-    ImageDto getImageByPath(String path);
+    Image getImageByPath(String path);
 
     List<ImageDto> getAllImages();
 
     Image getImage(Integer id);
 
-    void addImage(ImageDto image);
+    void addImage(Image image);
 
     void deleteImage(ImageDto image);
 
