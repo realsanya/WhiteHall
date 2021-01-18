@@ -66,6 +66,16 @@ public class ApplicationConfig {
     }
 
     @Bean
+    public TeamMemberService teamMemberService() {
+        return new TeamMemberServiceImpl(teamMemberRepository());
+    }
+
+    @Bean
+    public TeamMemberRepository teamMemberRepository() {
+        return new TeamMemberRepositoryJdbc(dataSource(), roleService());
+    }
+
+    @Bean
     public ReviewService reviewService() {
         return new ReviewServiceImpl(reviewReposiroty());
     }

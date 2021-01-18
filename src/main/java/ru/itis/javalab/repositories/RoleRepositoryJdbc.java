@@ -58,7 +58,7 @@ public class RoleRepositoryJdbc implements RoleRepository {
     @Override
     public Role findById(Integer id) {
         List<Role> roles = template.query(SQL_SELECT_BY_ID, roleRowMapper, id);
-        return roles.isEmpty() ? roles.get(0) : null;
+        return !roles.isEmpty() ? roles.get(0) : null;
     }
 
     @Override

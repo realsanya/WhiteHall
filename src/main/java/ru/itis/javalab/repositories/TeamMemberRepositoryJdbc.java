@@ -2,16 +2,20 @@ package ru.itis.javalab.repositories;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import ru.itis.javalab.models.Role;
 import ru.itis.javalab.models.TeamMember;
 import ru.itis.javalab.repositories.interfaces.TeamMemberRepository;
 import ru.itis.javalab.services.interfaces.RoleService;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TeamMemberRepositoryJdbc implements TeamMemberRepository {
     private DataSource dataSource;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private JdbcTemplate template;
     private RoleService roleService;
 
@@ -30,17 +34,23 @@ public class TeamMemberRepositoryJdbc implements TeamMemberRepository {
     //language=SQL
     private final String SQL_SELECT_ALL = "SELECT * FROM team_member";
 
+    //language=SQL
+    private static final String SQL_SELECT_ALL_WITH_PAGES = "select * from account order by id limit :limit offset :offset ;";
+
+
     //TODO посмотреть как передавать RoleDto
     private RowMapper<TeamMember> teamMemerRowMapper = (row, i) -> TeamMember.builder()
             .id(row.getInt("id"))
             .first_name(row.getString("first_name"))
             .last_name(row.getString("last_name"))
             .role_id(roleService.getRole(row.getInt("role_id")))
+            .text(row.getString("text"))
             .build();
 
     public TeamMemberRepositoryJdbc(DataSource dataSource, RoleService roleService) {
         this.dataSource = dataSource;
         this.template = new JdbcTemplate(dataSource);
+        this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.roleService = roleService;
     }
 
@@ -74,4 +84,13 @@ public class TeamMemberRepositoryJdbc implements TeamMemberRepository {
     public List<TeamMember> findAll() {
         return template.query(SQL_SELECT_ALL, teamMemerRowMapper);
     }
+
+    @Override
+    public List<TeamMember> findAll(int page, int size) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("limit", size);
+        params.put("offset", page * size);
+        return namedParameterJdbcTemplate.query(SQL_SELECT_ALL_WITH_PAGES, params, teamMemerRowMapper);
+    }
+
 }
