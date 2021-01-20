@@ -2,6 +2,9 @@
 <#import "layouts/base.ftl" as base>
 <@base.main title="Наша команда" css=["styles.css"]>
     <div class="content">
+        <div class="row">
+            <div class="offset-3 col-md-6 title">Наша команда</div>
+        </div>
         <section class="shop mt-5">
             <div class="container card px-5 pt-5 pb-5 pb-lg-5">
                 <div class="row ">
@@ -10,43 +13,45 @@
                             <div class="shop__sidebar__search">
                                 <form action="/members" method="post" id="searh-form" class="search-form">
                                     <div class="autocomplete">
-                                        <input style="border-radius: 15px;"
-                                               id="search-input" type="text"
-                                               name="search-input"
-                                               placeholder="Search...">
+                                        <input
+                                                id="search-input" type="text"
+                                                class="login-input"
+                                                style="background-color: #DFDFDF"
+                                                name="search-input"
+                                                placeholder="Search...">
                                     </div>
-                                    <button type="submit" class="search-btn" style="color: #aa4aac"><i
-                                                class="fas fa-search">Поиск</i></button>
+                                    <button type="submit" class="login-button"
+                                            style="width: 120px; height: 40px; font-size:14px; margin-top: 10px;">
+                                        Поиск
+                                    </button>
                                 </form>
                             </div>
-                            <div class="shop__sidebar__accordion">
-                                <div class="accordion" id="accordionExample">
-
-                                    <form action="/members" method="post">
-                                        <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <select name="select-tag" class="shop__product__option__right">
-                                                    <option value="chocolateTag">
-                                                        фотограф
-                                                    </option>
-                                                    <option value="nutsTag">
-                                                        видеограф
-                                                    </option>
-                                                    <option value="berriesTag">
-                                                        визажист
-                                                    </option>
-                                                    <option value="cocosTag">
-                                                        стилист
-                                                    </option>
-                                                    <option value="vanillaTag">
-                                                        парикмахер
-                                                    </option>
-                                                </select>
-                                                <button type="submit" class="tag-donut">Выбрать</button>
-                                            </div>
-                                        </div>
-                                    </form>
-
+                        </div>
+                    </div>
+                    <div class="col-lg-9 ">
+                        <div class="shop__product__option">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="shop__product__option__left">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="shop__product__option__right">
+                                        <form action="/search" method="post">
+                                            <select name="select-form" class="login-input">
+                                                <option value="priceIncrease">фотограф</option>
+                                                <option value="priceDecrease">видеограф</option>
+                                                <option value="weightIncrease">визажист</option>
+                                                <option value="weightDecrease">стилист</option>
+                                                <option value="weightDecrease">парикмахер</option>
+                                            </select>
+                                            <button type="submit" class="login-button"
+                                                    style="width: 100px; height: 40px; font-size:14px; margin-top: 10px">
+                                                Выбрать
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -55,15 +60,18 @@
                     <div class="row" style="padding-top: 10px">
                         <!--donuts-->
                         <#list members as member>
-                            <div class="col-xs-6 col-sm-4 col-md-4 ">
-                                <div class="card border-white">
+                            <div class="col-xs-6 col-sm-4 col-md-4">
+                                <div class="card border-white"
+                                     style="height: 300px; margin-top: 10px; overflow-y: auto">
                                     <div class="card-body text-center ">
-                                        <div class="row">
+                                        <div class="row" style="display: flex; align-items: center;">
                                             <div class="col-lg-7">
-                                                <h5 class="text-left "> ${member.getFirst_name()}</h5>
+                                                <h5 class="text-left"
+                                                    style="color: #6F99E8; font-size: 32px;"> ${member.getFirst_name()}</h5>
                                             </div>
                                             <div class="col">
-                                                <h5 class="text-right">  role </h5>
+                                                <span class="text-right"
+                                                      style="color: #484D50; font-size: 12px; font-weight: 700;"> ${member.getRole().name} </span>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -81,5 +89,6 @@
                     </div>
                 </div>
             </div>
+        </section>
     </div>
 </@base.main>
