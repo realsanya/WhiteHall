@@ -35,10 +35,14 @@ public class TeamMemberRepositoryJdbc implements TeamMemberRepository {
     private final String SQL_SELECT_ALL = "SELECT * FROM team_member";
 
     //language=SQL
-    private static final String SQL_SELECT_ALL_WITH_PAGES = "select * from account order by id limit :limit offset :offset ;";
+    private static final String SQL_SELECT_ALL_WITH_PAGES = "SELECT * FROM account ORDER BY id limit :limit offset :offset ";
 
+    //language=SQL
+    private static final String SQL_FIND_BY_NAME = "SELECT * FROM team_member WHERE first_name = ?";
 
-    //TODO посмотреть как передавать RoleDto
+    //language=SQL
+    private static final String SQL_FIND_BY_ROLE = "SELECT * FROM team_member WHERE role_id = ?";
+
     private RowMapper<TeamMember> teamMemerRowMapper = (row, i) -> TeamMember.builder()
             .id(row.getInt("id"))
             .first_name(row.getString("first_name"))
@@ -91,6 +95,20 @@ public class TeamMemberRepositoryJdbc implements TeamMemberRepository {
         params.put("limit", size);
         params.put("offset", page * size);
         return namedParameterJdbcTemplate.query(SQL_SELECT_ALL_WITH_PAGES, params, teamMemerRowMapper);
+    }
+
+    @Override
+    public List<TeamMember> findMembersByName(String name) {
+        return template.query(SQL_FIND_BY_NAME, teamMemerRowMapper, searchRequest(name));
+    }
+
+    @Override
+    public List<TeamMember> findMembersByRole(String role) {
+        return template.query(SQL_FIND_BY_ROLE, teamMemerRowMapper, roleService.getRoleByName(role).getId());
+    }
+
+    private String searchRequest(String name) {
+        return "%" + name + "%";
     }
 
 }

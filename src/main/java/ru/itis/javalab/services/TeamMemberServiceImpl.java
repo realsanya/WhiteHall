@@ -16,14 +16,25 @@ public class TeamMemberServiceImpl implements TeamMemberService {
     }
 
     @Override
-    public List<TeamMemberDto> getAllMembers() {
-        return TeamMemberDto.from(teamMemberRepository.findAll());
+    public List<TeamMember> getAllMembers() {
+        return teamMemberRepository.findAll();
     }
 
     @Override
-    public List<TeamMemberDto> getAllMembers(int page, int size) {
+    public List<TeamMember> getAllMembers(int page, int size) {
         return null;
     }
+
+    @Override
+    public List<TeamMember> getMembersByName(String name) {
+        return teamMemberRepository.findMembersByName(name);
+    }
+
+    @Override
+    public List<TeamMember> getMembersByRole(String role) {
+        return teamMemberRepository.findMembersByRole(role);
+    }
+
 
     @Override
     public void addUser(TeamMemberDto memberDto) {
